@@ -2,6 +2,8 @@
 
 [![Component Registry](https://components.espressif.com/components/espressif/esp-tflite-micro/badge.svg)](https://components.espressif.com/components/espressif/esp-tflite-micro)
 
+<a href="https://espressif.github.io/esp-launchpad/?flashConfigURL=https://espressif.github.io/esp-tflite-micro/launchpad.toml"><img src="https://espressif.github.io/esp-launchpad/assets/try_with_launchpad.png" alt="ESP Launchpad" height="56" style="border-radius: 8px;"></a>
+
 - As per TFLite Micro guidelines for vendor support, this repository has the `esp-tflite-micro` component and the examples needed to use Tensorflow Lite Micro on Espressif Chipsets (e.g., ESP32-P4) using ESP-IDF platform.
 - The base repo on which this is based can be found [here.](https://github.com/tensorflow/tflite-micro)
 
