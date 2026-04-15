@@ -122,6 +122,28 @@ jobs:
           description = "TFLite Micro Person Detection with camera"
           TOML
 
+      - name: Generate minimal-launchpad TOML for ESP32-S3-EYE
+        run: |
+          mkdir -p deploy/person_detection/esp32_s3_eye
+          cat > deploy/person_detection/esp32_s3_eye/launchpad.toml <<'TOML'
+          esp_toml_version = 1.0
+
+          multipart = true
+          chip = "esp32-s3"
+          supported_apps = [ "Person Detection: ESP32-S3-EYE" ]
+
+          ["Person Detection: ESP32-S3-EYE"]
+          icon = "https://raw.githubusercontent.com/espressif/esp-who/master/docs/_static/get-started/ESP32-S3-EYE-isometric.png"
+          image.esp32-s3.parts = [
+            "https://espressif.github.io/esp-tflite-micro/person_detection_esp32s3.bin",
+          ]
+          image.esp32-s3.addresses = [ "0x0" ]
+          readme.text = "https://raw.githubusercontent.com/espressif/esp-tflite-micro/master/examples/person_detection/README.md"
+
+          [[portConnectionOptions]]
+          console_baudrate = 115200
+          TOML
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
